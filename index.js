@@ -593,6 +593,18 @@ var createAnimatableComponent = function(component) {
       });
     },
 
+    spin: function(duration) {
+      return this.animate(duration, {
+        transform: [{
+          rotateZ: this.state.animationValue.interpolate({
+            inputRange: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+            outputRange: ['0 deg', '36 deg', '72 deg', '108 deg', '144 deg', '180 deg', '144 deg', '108 deg', '72 deg', '36 deg', '0 deg'],
+          }),
+        }],
+      });
+    },
+
+
     tada: function(duration) {
       return this.animate(duration, {
         transform: [{
